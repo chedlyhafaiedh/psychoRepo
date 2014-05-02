@@ -12,7 +12,6 @@ import javax.persistence.Inheritance;
 @Entity
 @Inheritance
 public class Administrator extends Person implements Serializable {
-	
 
 	public Administrator(String mail, String login, String password, String type) {
 		super(mail, login, password);
@@ -20,7 +19,7 @@ public class Administrator extends Person implements Serializable {
 	}
 
 	private String type;
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public Administrator() {
@@ -34,7 +33,5 @@ public class Administrator extends Person implements Serializable {
 	public void setType(String role) {
 		this.type = role;
 	}
-
-	
 
 }
