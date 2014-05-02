@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title><ui:insert name="Title"></ui:insert></title>
+	<meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width"/>
+
+
+  
+
+   <link rel="shortcut icon" href="resources/static/CACHE/favicon.ico"/>
+   <link rel="shortcut icon" href="../../resources/static/CACHE/favicon.ico"/>
+
+
+	
+
+	<link rel="stylesheet" href="resources/static/CACHE/css/5670482863bb.css" type="text/css" ></link>
+<link rel="stylesheet" href="../../resources/static/CACHE/css/5670482863bb.css" type="text/css" ></link>
+
+<!-- Layout Styles Dependencies -END -->
+
+<!-- View Styles Dependencies -->
+<link rel="stylesheet" href="../../resources/static/CACHE/css/56c64a503f0d.css" type="text/css" />
+<link rel="stylesheet" href="resources/static/CACHE/css/56c64a503f0d.css" type="text/css" />
+
+<!-- View Styles Dependencies - END -->
+
+</h:head>
+<h:body>
+
+	
+
+	
+
+	
+
+  <nav class="navbar navbar-default navbar-fixed-top" >
+    <div class="container">
+      <div class="navbar-header">
+        <ui:insert name="LOGO"></ui:insert>
+     
+      </div>
+
+      <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+          
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle needsclick" data-toggle="dropdown">
+            <i class="fa fa-user"></i>
+            
+            <span>Nobody!</span>
+            
+            <b class="caret"></b>
+          </a>
+          
+          <ul class="dropdown-menu">
+            <li><a href=""><i class="fa fa-sign-in"></i> Sign in</a></li>
+          </ul>
+          
+          </li>
+
+        </ul>
+
+      </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+  
+	
+
+<!-- View -->
+  <div class="container">
+
+  <div class="panel text-center">
+
+   
+    
+
+    <ui:insert name="Main"></ui:insert>
+
+    
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+       
+
+      </div>
+
+    </div>
+
+   </div>
+
+  </div>
+<!-- View - END -->
+
+  
+
+<!-- View Addons: dialogs, client-side templates, .... -->
+
+<!-- View Addons - END -->
+
+<!-- Layout Scripts Dependencies -->
+
+
+  
+  
+
+	<script type="text/javascript" src="../../resources/static/CACHE/js/812abdebffc1.js"></script>
+
+	<script type="text/javascript" src="resources/static/CACHE/js/812abdebffc1.js"></script>
+
+
+
+<!-- Layout Scripts Dependencies - END -->
+
+<!-- View Scripts -->
+	
+ 
+
+<!-- View Scripts - END -->
+
+  
+	
+
+</h:body>
+
+
+</html>
