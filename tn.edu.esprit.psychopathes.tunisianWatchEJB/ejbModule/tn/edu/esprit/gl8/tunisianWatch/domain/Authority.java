@@ -1,15 +1,18 @@
 package tn.edu.esprit.gl8.tunisianWatch.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Authorities")
+
 public class Authority implements Serializable {
 	/**
 	 * 
@@ -18,16 +21,11 @@ public class Authority implements Serializable {
 	private int idAuthority;
 	private String nomAuthority;
 	private String adresseAuthority;
+	private List<Claim> claims;
 
 	public Authority() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public Authority(String nomAuthority, String adresseAuthority) {
-		super();
-		this.nomAuthority = nomAuthority;
-		this.adresseAuthority = adresseAuthority;
 	}
 
 	@Id
@@ -54,6 +52,22 @@ public class Authority implements Serializable {
 
 	public void setAdresseAuthority(String adresseAuthority) {
 		this.adresseAuthority = adresseAuthority;
+	}
+
+	@OneToMany(mappedBy = "authority", cascade = CascadeType.ALL)
+	public List<Claim> getClaims() {
+		return claims;
+	}
+
+	public void setClaims(List<Claim> claims) {
+		this.claims = claims;
+	}
+
+	public void assignClaimToThoiAthority(List<Claim> claims) {
+		this.setClaims(claims);
+		for (Claim c : claims) {
+			c.setAuthority(this);
+		}
 	}
 
 }

@@ -2,10 +2,13 @@ package tn.edu.esprit.gl8.tunisianWatch.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Claim implements Serializable {
@@ -14,36 +17,20 @@ public class Claim implements Serializable {
 	 * 
 	 */
 	private int idclaim;
-	private String location;
-	private String priority;
+
+	public Claim() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	private double lat;
+	private double lng;
 	private String description;
-	private String direction;
 	private String statut;
 	private String date;
+	private String type;
+	private Authority authority;
 	private static final long serialVersionUID = 1L;
-
-	/*
-	 * private int idclaim;
-	 * 
-	 * @Column(name = "description") private String description;
-	 * 
-	 * @Column(name = "location") private String location;
-	 * 
-	 * @Column(name = "direction") private String direction;
-	 * 
-	 * @Column(name = "statut") private String statut;
-	 * 
-	 * @Column(name = "priority") private String priority;
-	 * 
-	 * @Column(name = "date") private String date;
-	 * 
-	 * // @ManyToOne // private User user;
-	 * 
-	 * @ManyToOne // private Categorie categorie; //
-	 * 
-	 * @OneToMany(mappedBy="claim") // private java.util.List<Categorie>
-	 * categories;
-	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,36 +50,12 @@ public class Claim implements Serializable {
 		this.description = description;
 	}
 
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getDirection() {
-		return direction;
-	}
-
-	public void setDirection(String direction) {
-		this.direction = direction;
-	}
-
 	public String getStatut() {
 		return statut;
 	}
 
 	public void setStatut(String statut) {
 		this.statut = statut;
-	}
-
-	public String getPriority() {
-		return priority;
-	}
-
-	public void setPriority(String priority) {
-		this.priority = priority;
 	}
 
 	public String getDate() {
@@ -103,43 +66,39 @@ public class Claim implements Serializable {
 		this.date = date;
 	}
 
-	// public User getUser() {
-	// return user;
-	// }
 
-	// public void setUser(User user) {
-	// this.user = user;
-	// }
-
-	public Claim(int idclaim, String description, String location,
-			String direction, String statut, String priority, String date) {
-		super();
-		this.idclaim = idclaim;
-		this.description = description;
-		this.location = location;
-		this.direction = direction;
-		this.statut = statut;
-		this.priority = priority;
-		this.date = date;
-		// this.user = user;
+	public double getLng() {
+		return lng;
 	}
 
-	public Claim(String description, String location, String direction,
-			String statut, String priority, String date) {
-		super();
-
-		this.description = description;
-		this.location = location;
-		this.direction = direction;
-		this.statut = statut;
-		this.priority = priority;
-		this.date = date;
-
+	public void setLng(double lng) {
+		this.lng = lng;
 	}
 
-	public Claim() {
-		super();
-		// TODO Auto-generated constructor stub
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(insertable = true, name = "idAuthority", referencedColumnName = "idAuthority")
+	public Authority getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(Authority authority) {
+		this.authority = authority;
 	}
 
 }

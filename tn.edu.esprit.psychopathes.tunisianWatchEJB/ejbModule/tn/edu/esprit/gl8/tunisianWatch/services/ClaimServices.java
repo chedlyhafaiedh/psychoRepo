@@ -10,10 +10,11 @@ import javax.persistence.Query;
 
 import tn.edu.esprit.gl8.tunisianWatch.domain.Claim;
 import tn.edu.esprit.gl8.tunisianWatch.impl.ClaimServicesLocal;
+import tn.edu.esprit.gl8.tunisianWatch.impl.ClaimServicesRemote;
 
 @Stateless
-@LocalBean
-public class ClaimServices implements ClaimServicesLocal {
+
+public class ClaimServices implements ClaimServicesLocal, ClaimServicesRemote {
 
 	public ClaimServices() {
 		// TODO Auto-generated constructor stub
@@ -63,5 +64,10 @@ public class ClaimServices implements ClaimServicesLocal {
 				.createQuery("select a from Claim a where a.location like :x");
 		query.setParameter("x", "%" + mC + "%");
 		return query.getResultList();
+	}
+
+	@Override
+	public void insertClaim(Claim claim) {
+		entityManager.persist(claim);
 	}
 }
