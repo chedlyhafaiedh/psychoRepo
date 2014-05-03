@@ -9,6 +9,7 @@
 		<class>tn.edu.esprit.gl8.tunisianWatch.domain.Claim</class>
 		<class>tn.edu.esprit.gl8.tunisianWatch.domain.Person</class>
 		<class>tn.edu.esprit.gl8.tunisianWatch.domain.User</class>
+		<class>tn.edu.esprit.gl8.tunisianWatch.domain.Citizen</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="create" />

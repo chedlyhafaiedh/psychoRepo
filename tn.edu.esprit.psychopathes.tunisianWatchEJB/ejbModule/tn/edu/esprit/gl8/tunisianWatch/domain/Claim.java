@@ -30,6 +30,7 @@ public class Claim implements Serializable {
 	private String date;
 	private String type;
 	private Authority authority;
+	private Citizen citizen;
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -66,7 +67,6 @@ public class Claim implements Serializable {
 		this.date = date;
 	}
 
-
 	public double getLng() {
 		return lng;
 	}
@@ -99,6 +99,16 @@ public class Claim implements Serializable {
 
 	public void setAuthority(Authority authority) {
 		this.authority = authority;
+	}
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(insertable= true, name="idCitizen", referencedColumnName="idCitizen")
+	public Citizen getCitizen() {
+		return citizen;
+	}
+
+	public void setCitizen(Citizen citizen) {
+		this.citizen = citizen;
 	}
 
 }
